@@ -20,22 +20,22 @@ import { mapGetters } from 'vuex'
 export default {
   methods:{
     customer(){
-      window.location.href="http://localhost:9529/#/customer/list";
+      window.location.href="http://localhost:9528/#/customer/list";
     },
     employee(){
-      window.location.href="http://localhost:9529/#/employee/list";
+      window.location.href="http://localhost:9528/#/employee/list";
     },
     other(){
-      window.location.href="http://localhost:9529/#/nested/category";
+      window.location.href="http://localhost:9528/#/nested/category";
     },
     order(){
-      window.location.href="http://localhost:9529/#/order/list";
+      window.location.href="http://localhost:9528/#/order/list";
     },
     comment(){
-      window.location.href="http://localhost:9529/#/comment/list";
+      window.location.href="http://localhost:9528/#/comment/list";
     },
     address(){
-      window.location.href="http://localhost:9529/#/address/list";
+      window.location.href="http://localhost:9528/#/address/list";
     }
   },
   name: 'Dashboard',
