@@ -97,10 +97,15 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
+        let url ="http://localhost:6677/customer/deleteById?id="+id;
+        request.get(url).then((response)=>{
+          this.loadData();
         this.$message({
           type: 'success',
           message: '删除成功!'
+          
         });
+        })  
       })
       
     },
@@ -128,7 +133,7 @@ export default {
     // this为当前vue实例对象
     // vue实例创建完毕 
     this.loadData()
-
+    
   }
 }
 </script>
