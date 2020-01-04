@@ -28,9 +28,6 @@
       :visible.sync="visible"
       width="60%">
       <el-form :model="form" label-width="80px">
-        <el-form-item label="编号">
-          <el-input v-model="form.id"></el-input>
-        </el-form-item>
         <el-form-item label="下单时间">
           <el-input v-model="form.order_time"></el-input>
         </el-form-item>
