@@ -1,11 +1,21 @@
 <template>
   <div>
+    <h2>地址管理</h2>
     <!-- 按钮 -->
     <el-button type="success" size="small" @click="toAddHandler">添加</el-button> 
     <el-button type="danger" size="small">批量删除</el-button>
     <!-- /按钮 -->
     <!-- 表格 -->
-    <el-table :data="addresses">
+    <el-table 
+        ref = "multipleTable"
+        :data="addresses"
+        tooltip-effect="dark"
+        style="width: 100%"
+        @selection-change="handleSelectionChange">
+    <el-table-column
+        type="selection"
+        width="55">
+    </el-table-column>
       <el-table-column prop="id" label="编号"></el-table-column>
       <el-table-column prop="customerId" label="顾客号"></el-table-column>
       <el-table-column prop="province" label="省"></el-table-column>
@@ -18,6 +28,7 @@
           <!-- slot获取当前行 -->
           <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
           <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
+          <a href="" @click.prevent="">详情</a>
         </template>
       </el-table-column>
     </el-table>
@@ -65,6 +76,18 @@ import querystring from 'querystring'
 export default {
   // 用于存放网页中需要调用的方法
   methods:{
+    toggleSelection(rows) {
+        if (rows) {
+          rows.forEach(row => {
+            this.$refs.multipleTable.toggleRowSelection(row);
+          });
+        } else {
+          this.$refs.multipleTable.clearSelection();
+        }
+    },
+    handleSelectionChange(val) {
+        this.multipleSelection = val;
+    },
     loadData(){
       let url = "http://localhost:6677/address/findAll"
       request.get(url).then((response)=>{
