@@ -1,6 +1,16 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <div class="dashboard-text">平台: 这是一个服务站</div><br/>
+    <div>请选择你想进行的操作：</div><br/>
+   <br/><br/>
+    <el-button type="success"  @click.prevent="customer">顾客管理</el-button>
+    <el-button type="success"  @click.prevent="employee">员工管理</el-button><br/><br/>
+    <el-button type="success"  @click.prevent="other">其他管理</el-button>
+    <el-button type="success"  @click.prevent="order">订单管理</el-button><br/><br/>
+    <el-button type="success"  @click.prevent="comment">评论管理</el-button>
+    <el-button type="success"  @click.prevent="address">地址管理</el-button><br/><br/>
+
+
   </div>
 </template>
 
@@ -8,6 +18,26 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  methods:{
+    customer(){
+      window.location.href="http://localhost:9529/#/customer/list";
+    },
+    employee(){
+      window.location.href="http://localhost:9529/#/employee/list";
+    },
+    other(){
+      window.location.href="http://localhost:9529/#/nested/category";
+    },
+    order(){
+      window.location.href="http://localhost:9529/#/order/list";
+    },
+    comment(){
+      window.location.href="http://localhost:9529/#/comment/list";
+    },
+    address(){
+      window.location.href="http://localhost:9529/#/address/list";
+    }
+  },
   name: 'Dashboard',
   computed: {
     ...mapGetters([
