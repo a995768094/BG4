@@ -6,6 +6,7 @@
     <!-- /按钮 -->
     <!-- 表格 -->
     <el-table :data="orders">
+      <el-table-column prop="id" label="编号"></el-table-column>
       <el-table-column prop="order_time" label="下单时间"></el-table-column>
       <el-table-column prop="price" label="总价"></el-table-column>
       <el-table-column prop="status" label="状态"></el-table-column>
@@ -27,6 +28,9 @@
       :visible.sync="visible"
       width="60%">
       <el-form :model="form" label-width="80px">
+        <el-form-item label="编号">
+          <el-input v-model="form.id"></el-input>
+        </el-form-item>
         <el-form-item label="下单时间">
           <el-input v-model="form.order_time"></el-input>
         </el-form-item>
