@@ -1,5 +1,15 @@
 <template>
   <div>
+    <template>
+  <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+    <el-tab-pane label="待支付" name="first">待支付</el-tab-pane>
+    <el-tab-pane label="待派单" name="second">待派单</el-tab-pane>
+    <el-tab-pane label="待接单" name="third">待接单</el-tab-pane>
+    <el-tab-pane label="待服务" name="fourth">待服务</el-tab-pane>
+    <el-tab-pane label="待确认" name="fifth">待确认</el-tab-pane>
+    <el-tab-pane label="已完成" name="sixth">已完成</el-tab-pane>
+  </el-tabs>
+</template>
     <!-- 按钮 -->
     <el-button type="success" size="small" @click="toAddHandler">添加</el-button> 
     <el-button type="danger" size="small">批量删除</el-button>
@@ -74,7 +84,9 @@ import querystring from 'querystring'
 export default {
   // 用于存放网页中需要调用的方法
   methods:{
-       
+       handleClick(tab, event) {
+        console.log(tab, event);
+      },
     // 当分页中当前页改变的时候执行
     pageChageHandler(page){
         // 将params中当前页改为插件中的当前页
@@ -164,12 +176,11 @@ export default {
   // 用于存放要向网页中显示的数据
   data(){
     return {
+      activeName: 'first',
       options:[],
       visible:false,
       orders:{},
-      form:{
-        type:"order"
-      },
+      form:{},
       params:{
           page:0,
           pageSize:10
