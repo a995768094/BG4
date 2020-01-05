@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '生活助手服务预约',
+  title: '鐢熸椿鍔╂墜鏈嶅姟棰勭害',
 
   /**
    * @type {boolean} true | false
