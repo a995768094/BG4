@@ -176,6 +176,7 @@ export default {
   // 用于存放要向网页中显示的数据
   data(){
     return {
+      title:"录入产品信息",
       activeName: 'first',
       options:[],
       visible:false,
