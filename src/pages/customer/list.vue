@@ -18,7 +18,7 @@
       <el-table-column label="操作">
         <template v-slot="slot">
           <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
-          <a href="" @click.prevent="toUpdateHandler">修改</a>
+          <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
         </template>
       </el-table-column>
     </el-table>
@@ -28,7 +28,7 @@
     <!-- /分页结束 -->
     <!-- 模态框 -->
     <el-dialog
-      :title ="title"
+      :title = "title"
       :visible.sync="visible"
       width="60%">
 
@@ -63,8 +63,8 @@ import querystring from 'querystring'
 export default {
   // 用于存放网页中需要调用的方法
   methods:{
-    deletemore(row){
-      alert(this.id);
+    deletemore(id){
+      alert(this.form.id);
     },
     toggleSelection(rows) {
         if (rows) {
@@ -137,8 +137,9 @@ export default {
       })
       
     },
-    toUpdateHandler(){
+    toUpdateHandler(row){
       this.title = "修改顾客信息";
+      this.form = row;
       this.visible = true;
     },
     closeModalHandler(){
@@ -152,6 +153,7 @@ export default {
   // 用于存放要向网页中显示的数据
   data(){
     return {
+      title:'录入顾客信息',
       visible:false,
       customers:[],
       form:{
