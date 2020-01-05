@@ -26,9 +26,9 @@
       <el-table-column label="操作">
         <template v-slot="slot">
           <!-- slot获取当前行 -->
-          <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
-          <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
-          <a href="" @click.prevent="">详情</a>
+          <a href="" @click.prevent="toDeleteHandler(slot.row.id)"><i class="el-icon-delete"></i></a>
+          <a href="" @click.prevent="toUpdateHandler(slot.row)"><i class="el-icon-edit"></i></a>
+          <a href="" @click.prevent=""><i class="el-icon-search"></i></a>
         </template>
       </el-table-column>
     </el-table>

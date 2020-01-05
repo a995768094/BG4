@@ -22,9 +22,9 @@
             <el-table-column prop="categoryId" label="所属分类"></el-table-column>
             <el-table-column label="操作">
                 <template v-slot="slot">
-                    <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
-                    <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
-                    <a href="" @click.prevent="">详情</a>
+                    <a href="" @click.prevent="toDeleteHandler(slot.row.id)"><i class="el-icon-delete"></i></a>
+                    <a href="" @click.prevent="toUpdateHandler(slot.row)"><i class="el-icon-edit"></i></a>
+                    <a href="" @click.prevent=""><i class="el-icon-search"></i></a>
                 </template>
             </el-table-column>
         </el-table>
@@ -58,7 +58,7 @@
                     <el-input v-model="form.description" type="textarea"></el-input>
                 </el-form-item>
                 <el-form-item label="产品主图">
-                    <el-input v-model=form.photo></el-input>
+                    <el-input v-model="form.photo"></el-input>
                 </el-form-item>
             </el-form>      
             <span slot="footer" class="dialog-footer">
@@ -169,7 +169,7 @@ export default {
         return{
             visible:false,
             products:[],
-            option:[],
+            options:[],
             form:{}
             
         }
