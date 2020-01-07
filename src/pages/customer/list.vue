@@ -2,8 +2,9 @@
   <div>
     <!-- 按钮 -->
     
-    <el-button type="success" size="small" @click="toAddHandler">添加</el-button> 
-    <el-button type="danger" size="small" @click="deletemore">批量删除</el-button>
+    <el-button  type="success" size="small" @click="toAddHandler">添加</el-button> 
+    <el-button  type="danger" size="small" @click="deletemore">批量删除</el-button>
+    
     <!-- /按钮 -->
     <!-- 表格 -->
     <el-table :data="customers" ref = "multipleTable"
@@ -63,8 +64,9 @@ import querystring from 'querystring'
 export default {
   // 用于存放网页中需要调用的方法
   methods:{
-    deletemore(id){
-      alert(this.form.id);
+    deletemore(row){
+      alert(slot.row);
+      
     },
     toggleSelection(rows) {
         if (rows) {

@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      title: '生活助手服务预约',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '网络姻缘一线牵',
+      logo: 'https://i.loli.net/2020/01/07/oUGKF5i932kvtO6.jpg'
     }
   }
 }
@@ -53,11 +53,13 @@ export default {
   & .sidebar-logo-link {
     height: 100%;
     width: 100%;
+    background: #d80592;
 
     & .sidebar-logo {
       width: 32px;
       height: 32px;
       vertical-align: middle;
+      
       margin-right: 12px;
     }
 
@@ -76,6 +78,7 @@ export default {
   &.collapse {
     .sidebar-logo {
       margin-right: 0px;
+      
     }
   }
 }

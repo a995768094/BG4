@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '生活助手服务预约',
+  title: '网络姻缘一线牵',
 
   /**
    * @type {boolean} true | false
