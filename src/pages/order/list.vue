@@ -95,7 +95,7 @@ export default {
         this.loadData();
     },
     loadData(){
-      let url = "http://localhost:6677/order/queryPage"
+      let url = "http://134.175.154.93:6677/order/queryPage"
       request({
           url,
           method:"post",
@@ -114,7 +114,7 @@ export default {
       // request.post(url,this.form)
       // 查询字符串 type=order&age=12
       // 通过request与后台进行交互，并且要携带参数
-      let url = "http://localhost:6677/order/saveOrUpdate";
+      let url = "http://134.175.154.93:6677/order/saveOrUpdate";
       request({
         url,
         method:"POST",
@@ -141,7 +141,7 @@ export default {
         type: 'warning'
       }).then(() => {
         // 调用后台接口，完成删除操作
-        let url = "http://localhost:6677/order/deleteById?id="+id;
+        let url = "http://134.175.154.93:6677/order/deleteById?id="+id;
         request.get(url).then((response)=>{
           //1. 刷新数据
           this.loadData();
