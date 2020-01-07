@@ -2,11 +2,14 @@
     <div>
         <!--  按钮  -->
        <el-button type="success" size="small" @click="toAddHandler">添加</el-button>
-       <el-button type="danger" size="small">批量删除</el-button>
+       <el-button type="danger" size="small" @click="deletemore">批量删除</el-button>
         <!--  /按钮  -->
         <!--   表格 -->
-        <el-table :data="comments">
-          <el-table-column prop="id" label="编号"></el-table-column>
+        <el-table :data="comments" ref = "multipleTable" @selection-change="handleSelectionChange">
+          <el-table-column
+          type="selection"
+          width="55">
+          </el-table-column>
           <el-table-column prop="content" label="内容"></el-table-column>
           <el-table-column prop="commentTime" label="评论时间"></el-table-column>
           <el-table-column prop="orderId" label="操作者"></el-table-column>
@@ -30,9 +33,6 @@
    width="60%">
    ---{{form}}
     <el-form :model="form" label-width="80px">
-        <el-form-item label="编号">
-            <el-input v-model="form.id"></el-input>
-        </el-form-item>
         <el-form-item label="评论内容">
             <el-input v-model="form.content"></el-input>
         </el-form-item>
@@ -59,6 +59,21 @@ import querystring from 'querystring'
 export default {
     //用于存放网页中需要调用的方法
     methods:{
+      deletemore(row){
+        alert(this.id);
+      },
+      toggleSelection(rows){
+        if(rows){
+          rows.forEach(row => {
+            this.$refs.multipleTable.toggleRowSelection(row);
+          });
+        }else{
+          this.$refs.multipleTable.clearSelection();
+        }
+      },
+      handleSelectionChange(val){
+        this.multipleSelection=val;
+      },
         loadData(){
             let url = "http://localhost:6677/comment/findAll"
             request.get(url).then((response)=>{
