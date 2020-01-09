@@ -14,7 +14,7 @@
     <el-table :data="orders.list">
       <el-table-column prop="id" label="编号"></el-table-column>
       <el-table-column width="200" prop="orderTime" label="下单时间"></el-table-column>
-      <el-table-column prop="total" label="总价"></el-table-column>
+      <el-table-column prop="total" label="总花销"></el-table-column>
       <el-table-column prop="status" label="状态"></el-table-column>
       <el-table-column prop="customerId" label="顾客ID"></el-table-column>
       <el-table-column prop="waiterId" label="员工ID"></el-table-column>
@@ -43,7 +43,7 @@
       width="60%">
       <div>
         <p> <strong>订单编号：</strong> {{form.id}} </p>
-        <p> <strong>订单总价：</strong> {{form.total}} </p>
+        <p> <strong>订单总花销：</strong> {{form.total}} </p>
         <p> <strong>下单时间：</strong> {{form.orderTime}} </p>
         <p> 
           <strong>服务员工：</strong> 
