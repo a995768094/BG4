@@ -31,13 +31,9 @@
    :title ="title" 
    :visible.sync="visible" 
    width="60%">
-   ---{{form}}
     <el-form :model="form" label-width="80px">
         <el-form-item label="评论内容">
             <el-input v-model="form.content"></el-input>
-        </el-form-item>
-        <el-form-item label="评论时间">
-            <el-input v-model="form.commentTime"></el-input>
         </el-form-item>
         <el-form-item label="操作者">
             <el-input v-model="form.orderId"></el-input>

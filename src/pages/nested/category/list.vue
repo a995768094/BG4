@@ -32,7 +32,6 @@
    :title ="title" 
    :visible.sync="visible" 
    width="60%">
-   ---{{form}}
     <el-form :model="form" label-width="80px">
         <el-form-item label="栏目名称">
           <el-input v-model="form.name"></el-input>
